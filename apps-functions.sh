@@ -1,6 +1,12 @@
 prepare() {
+    tar_opts="-xzf"
+    ext="tar.gz"
+    if [ $1 == "bzip" ] ; then
+        tar_opts="-xjf"
+        ext="tar.bz2"
+    fi
     rm -rf $package_build_dir
-    tar -xzf $APPS_SOURCE_DIR/$package-$version.tar.gz -C $APPS_BUILD_DIR
+    tar $tar_opts $APPS_SOURCE_DIR/$package-$version.$ext -C $APPS_BUILD_DIR
     mv $APPS_BUILD_DIR/$package-$version $package_build_dir
     cd $package_build_dir
 }
