@@ -1,7 +1,7 @@
 prepare() {
     rm -rf $package_build_dir
-    tar -xzf $APP_SOURCE_DIR/$package-$version.tar.gz -C $APP_BUILD_DIR
-    mv $APP_BUILD_DIR/$package-$version $package_build_dir
+    tar -xzf $APPS_SOURCE_DIR/$package-$version.tar.gz -C $APPS_BUILD_DIR
+    mv $APPS_BUILD_DIR/$package-$version $package_build_dir
     cd $package_build_dir
 }
 
